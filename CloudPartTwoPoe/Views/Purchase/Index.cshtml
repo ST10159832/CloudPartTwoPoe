@@ -1,0 +1,46 @@
+﻿@model List<Purchase>
+@{
+}
+
+<h1 class=" text-center mb-4">Purchases </h1>
+
+<div class=" row mb-3">
+	<div class=" col">
+		 <a class=" btn btn-primary" asp-controller="Purchase" asp-action="Create"> New Entry </a> 
+	</div>
+	<div class=" col">
+	</div>
+
+</div>
+
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>PurcahseID</th>
+			<th>FirstName</th>
+			<th>LastName</th>
+			<th>Email</th>
+			<th>PhoneNumber</th>
+			<th>Address</th>
+			<th>itemPurchased</th>
+			
+		</tr>
+	</thead>
+	<tbody>
+
+		@foreach (var purchase in Model)
+		{
+			<tr>
+				<td>@purchase.PurchaseID</td>
+				<td>@purchase.FirstName</td>
+				<td>@purchase.LastName</td>
+				<td>@purchase.Email</td>
+				<td>@purchase.PhoneNumber</td>
+				<td>@purchase.Address</td>
+				<td>@purchase.ItemPurchased</td>
+			</tr>
+		}
+
+	</tbody>
+</table>
